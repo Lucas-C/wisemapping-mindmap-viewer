@@ -21,7 +21,7 @@
  */
 mindplot.persistence.XMLSerializerFactory = {};
 
-/** 
+/**
  * @param {mindplot.model.IMindmap} mindmap
  * @return {mindplot.persistence.XMLSerializer_Beta|mindplot.persistence.XMLSerializer_Pela|
  * mindplot.persistence.XMLSerializer_Tango} serializer corresponding to the mindmap's version
@@ -41,7 +41,7 @@ mindplot.persistence.XMLSerializerFactory.getSerializerFromDocument = function(d
 
 /**
  * retrieves the serializer for the mindmap's version and migrates to the current version,
- * e.g. for a Beta mindmap and current version Tango: 
+ * e.g. for a Beta mindmap and current version Tango:
  * serializer = new Pela2TangoMigrator(new Beta2PelaMigrator(new XMLSerializer_Beta()))
  * @param {String} version the version name
  * @return serializer

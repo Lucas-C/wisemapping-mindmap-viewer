@@ -38,7 +38,7 @@ mindplot.model.NodeModel = new Class(/** @lends NodeModel */{
         this._feature = [];
     },
 
-    /** 
+    /**
      * @param type
      * @param attributes
      * @return {mindplot.model.FeatureModel} the created feature model
@@ -47,7 +47,7 @@ mindplot.model.NodeModel = new Class(/** @lends NodeModel */{
         return mindplot.TopicFeature.createModel(type, attributes);
     },
 
-    /** 
+    /**
      * @param feature
      * @throws will throw an error if feature is null or undefined
      */
@@ -61,7 +61,7 @@ mindplot.model.NodeModel = new Class(/** @lends NodeModel */{
         return this._feature;
     },
 
-    /** 
+    /**
      * @param feature
      * @throws will throw an error if feature is null or undefined
      * @throws will throw an error if the feature could not be removed
@@ -76,7 +76,7 @@ mindplot.model.NodeModel = new Class(/** @lends NodeModel */{
 
     },
 
-    /** 
+    /**
      * @param {String} type the feature type, e.g. icon or link
      * @throws will throw an error if type is null or undefined
      */
@@ -87,7 +87,7 @@ mindplot.model.NodeModel = new Class(/** @lends NodeModel */{
         });
     },
 
-    /** 
+    /**
      * @param {String} id
      * @throws will throw an error if id is null or undefined
      * @throws will throw an error if feature could not be found
@@ -107,7 +107,7 @@ mindplot.model.NodeModel = new Class(/** @lends NodeModel */{
         return Object.keys(this._properties);
     },
 
-    /** 
+    /**
      * @param key
      * @param value
      * @throws will throw an error if key is null or undefined
@@ -129,7 +129,7 @@ mindplot.model.NodeModel = new Class(/** @lends NodeModel */{
         return !$defined(result) ? null : result;
     },
 
-    /** 
+    /**
      * @return {mindplot.model.NodeModel} an identical clone of the NodeModel
      */
     clone:function () {
@@ -165,8 +165,8 @@ mindplot.model.NodeModel = new Class(/** @lends NodeModel */{
         return result;
     },
 
-    /** 
-     * @param {mindplot.model.NodeModel} child 
+    /**
+     * @param {mindplot.model.NodeModel} child
      * @throws will throw an error if child is null, undefined or not a NodeModel object
      */
     append:function (child) {
@@ -175,7 +175,7 @@ mindplot.model.NodeModel = new Class(/** @lends NodeModel */{
         child._parent = this;
     },
 
-    /** 
+    /**
      * @param {mindplot.model.NodeModel} child
      * @throws will throw an error if child is null, undefined or not a NodeModel object
      */
@@ -218,7 +218,7 @@ mindplot.model.NodeModel = new Class(/** @lends NodeModel */{
         return result;
     },
 
-    /** 
+    /**
      * @id
      * @return {mindplot.model.NodeModel} the node with the respective id
      */

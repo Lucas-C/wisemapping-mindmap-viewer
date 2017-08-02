@@ -22,7 +22,7 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         this._rootNodes = [];
     },
 
-    /** 
+    /**
      * @param root
      * @throws will throw an error if root is null or undefined
      */
@@ -57,7 +57,7 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
 
     /**
      * @param nodeId
-     * @throws will throw an error if nodeId is null or undefined 
+     * @throws will throw an error if nodeId is null or undefined
      */
     remove:function (nodeId) {
         $assert($defined(nodeId), 'nodeId can not be null');
@@ -65,11 +65,11 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         this._rootNodes.erase(node);
     },
 
-    /** 
+    /**
      * @param parentId
      * @param childId
-     * @throws will throw an error if parentId is null or undefined 
-     * @throws will throw an error if childId is null or undefined 
+     * @throws will throw an error if parentId is null or undefined
+     * @throws will throw an error if childId is null or undefined
      * @throws will throw an error if node with id childId is already a child of parent
      */
     connect:function (parentId, childId) {
@@ -85,9 +85,9 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         this._rootNodes.erase(child);
     },
 
-    /** 
+    /**
      * @param nodeId
-     * @throws will throw an error if nodeId is null or undefined 
+     * @throws will throw an error if nodeId is null or undefined
      * @throws will throw an error if node is not connected
      */
     disconnect:function (nodeId) {
@@ -100,10 +100,10 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         node._parent = null;
     },
 
-    /** 
+    /**
      * @param id
      * @param validate
-     * @throws will throw an error if id is null or undefined 
+     * @throws will throw an error if id is null or undefined
      * @throws will throw an error if node cannot be found
      * @return node
      */
@@ -143,7 +143,7 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         return result;
     },
 
-    /** 
+    /**
      * @param node
      * @throws will throw an error if nodeId is null or undefined
      * @return children
@@ -153,7 +153,7 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         return node._children;
     },
 
-    /** 
+    /**
      * @param node
      * @throws will throw an error if node is null or undefined
      * @return root node or the provided node, if it has no parent
@@ -168,9 +168,9 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         return node;
     },
 
-    /** 
+    /**
      * @param node
-     * @throws will throw an error if node is null or undefined 
+     * @throws will throw an error if node is null or undefined
      * @return {Array} ancestors*/
     getAncestors:function (node) {
         $assert(node, 'node cannot be null');
@@ -186,9 +186,9 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         return result;
     },
 
-    /** 
+    /**
      * @param node
-     * @throws will throw an error if node is null or undefined 
+     * @throws will throw an error if node is null or undefined
      * @return {Array} siblings
      */
     getSiblings:function (node) {
@@ -202,9 +202,9 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         return siblings;
     },
 
-    /** 
+    /**
      * @param node
-     * @throws will throw an error if node is null or undefined 
+     * @throws will throw an error if node is null or undefined
      * @return {Boolean} whether the node has a single path to a single leaf (no branching)
      */
     hasSinglePathToSingleLeaf:function (node) {
@@ -229,19 +229,19 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         return this.getSiblings(node).length > 0 && this.getChildren(node).length == 1;
     },
 
-    /** 
+    /**
      * @param node
-     * @throws will throw an error if node is null or undefined 
-     * @return {Boolean} whether the node is a leaf 
+     * @throws will throw an error if node is null or undefined
+     * @return {Boolean} whether the node is a leaf
      */
     isLeaf:function (node) {
         $assert(node, 'node cannot be null');
         return this.getChildren(node).length == 0;
     },
 
-    /** 
+    /**
      * @param node
-     * @throws will throw an error if node is null or undefined 
+     * @throws will throw an error if node is null or undefined
      * @return parent
      */
     getParent:function (node) {
@@ -249,7 +249,7 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         return node._parent;
     },
 
-    /** 
+    /**
      * @return result
      */
     dump:function () {
@@ -273,7 +273,7 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         return result;
     },
 
-    /** 
+    /**
      * @param canvas
      */
     plot:function (canvas) {
@@ -310,7 +310,7 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         }
     },
 
-    /** 
+    /**
      * @param node
      * @param position
      */
@@ -330,7 +330,7 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
 
     },
 
-    /** 
+    /**
      * @param node
      * @param xOffset
      * @param yOffset
@@ -346,7 +346,7 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         });
     },
 
-    /** 
+    /**
      * @param node
      * @param yOffset
      * @return siblings in the offset (vertical) direction, i.e. with lower or higher order, respectively
@@ -367,10 +367,10 @@ mindplot.layout.RootedTreeSet = new Class(/** @lends RootedTreeSet */{
         return siblings;
     },
 
-    /** 
+    /**
      * @param node
      * @param yOffset
-     * @return branches of the root node on the same side as the given node's, in the given 
+     * @return branches of the root node on the same side as the given node's, in the given
      * vertical direction
      */
     getBranchesInVerticalDirection:function (node, yOffset) {

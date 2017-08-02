@@ -18,7 +18,7 @@
 
 mindplot.commands.DeleteCommand = new Class(/** @lends mindplot.commands.DeleteCommand */{
     Extends:mindplot.Command,
-    /** 
+    /**
      * @classdesc This command class handles do/undo of deleting a topic.
      * @constructs
      * @param {Array<String>} topicIds ids of the topics to delete
@@ -36,8 +36,8 @@ mindplot.commands.DeleteCommand = new Class(/** @lends mindplot.commands.DeleteC
         this._parentTopicIds = [];
     },
 
-    /** 
-     * Overrides abstract parent method 
+    /**
+     * Overrides abstract parent method
      */
     execute:function (commandContext) {
 
@@ -86,9 +86,9 @@ mindplot.commands.DeleteCommand = new Class(/** @lends mindplot.commands.DeleteC
         }
     },
 
-    /** 
+    /**
      * Overrides abstract parent method
-     * @see {@link mindplot.Command.undoExecute} 
+     * @see {@link mindplot.Command.undoExecute}
      */
     undoExecute:function (commandContext) {
 

@@ -41,8 +41,8 @@ mindplot.commands.AddFeatureToTopicCommand = new Class(/** @lends AddFeatureToTo
         this._featureModel = null;
     },
 
-    /** 
-     * Overrides abstract parent method 
+    /**
+     * Overrides abstract parent method
      */
     execute:function (commandContext) {
         var topic = commandContext.findTopics(this._topicId)[0];
@@ -55,9 +55,9 @@ mindplot.commands.AddFeatureToTopicCommand = new Class(/** @lends AddFeatureToTo
         topic.addFeature(this._featureModel);
     },
 
-    /** 
+    /**
      * Overrides abstract parent method
-     * @see {@link mindplot.Command.undoExecute} 
+     * @see {@link mindplot.Command.undoExecute}
      */
     undoExecute:function (commandContext) {
         var topic = commandContext.findTopics(this._topicId)[0];

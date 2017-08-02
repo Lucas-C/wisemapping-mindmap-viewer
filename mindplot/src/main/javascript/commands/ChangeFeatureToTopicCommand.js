@@ -39,7 +39,7 @@ mindplot.commands.ChangeFeatureToTopicCommand = new Class(/** @lends ChangeFeatu
         this._attributes = attributes;
     },
 
-    /** 
+    /**
      * Overrides abstract parent method
      */
     execute: function(commandContext) {
@@ -51,7 +51,7 @@ mindplot.commands.ChangeFeatureToTopicCommand = new Class(/** @lends ChangeFeatu
         this._attributes = oldAttributes;
     },
 
-    /** 
+    /**
      * Overrides abstract parent method
      * @see {@link mindplot.Command.undoExecute}
      */

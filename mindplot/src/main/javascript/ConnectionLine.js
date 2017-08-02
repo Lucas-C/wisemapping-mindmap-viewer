@@ -37,8 +37,8 @@ mindplot.ConnectionLine = new Class({
             line.setDestControlPoint(ctrlPoints[1]);
         }
         // Set line styles ...
-        var strokeColor = mindplot.ConnectionLine.getStrokeColor();
-        line.setStroke(1, 'solid', strokeColor, 1);
+        var strokeColor = sourceNode.getEdgeStrokeColor() || mindplot.ConnectionLine.getStrokeColor();
+        line.setStroke(sourceNode.getEdgeStrokeWidth() || 1, 'solid', strokeColor, 1);
         line.setFill(strokeColor, 1);
 
         this._line2d = line;

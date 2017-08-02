@@ -212,4 +212,4 @@ mindplot.DragTopic.__getDragPivot = function () {
     }
     return result;
 };
-                             
+

@@ -182,6 +182,18 @@ mindplot.NodeGraph = new Class(/** @lends NodeGraph */{
     getPosition: function () {
         var model = this.getModel();
         return model.getPosition();
+    },
+    
+    /** */
+    getEdgeStrokeColor: function () {
+        var model = this.getModel();
+        return model.getEdgeStrokeColor();
+    },
+
+    /** */
+    getEdgeStrokeWidth: function () {
+        var model = this.getModel();
+        return model.getEdgeStrokeWidth();
     }
 });
 

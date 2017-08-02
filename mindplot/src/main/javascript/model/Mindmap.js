@@ -66,7 +66,7 @@ mindplot.model.Mindmap = new Class(/** @lends Mindmap */{
         /**
          * @param {mindplot.model.NodeModel} nodeModel
          * @throws will throw an error if nodeModel is null, undefined or not a node model object
-         * @throws will throw an error if 
+         * @throws will throw an error if
          */
         addBranch:function (nodeModel) {
             $assert(nodeModel && nodeModel.isNodeModel(), 'Add node must be invoked with model objects');

@@ -19,8 +19,8 @@
 mindplot.commands.GenericFunctionCommand = new Class(/** @lends GenericFunctionCommand */{
     Extends:mindplot.Command,
     /**
-     * @classdesc This command handles do/undo of different actions, e.g. moving topics to 
-     * a different position, changing text or font,... (for full reference check the 
+     * @classdesc This command handles do/undo of different actions, e.g. moving topics to
+     * a different position, changing text or font,... (for full reference check the
      * StandaloneActionDispatcher i.e. the ActionDispatcher subclass in use)
      * @constructs
      * @param {Function} commandFunc the function the command shall execute
@@ -40,8 +40,8 @@ mindplot.commands.GenericFunctionCommand = new Class(/** @lends GenericFunctionC
         this._oldValues = [];
     },
 
-    /** 
-     * Overrides abstract parent method 
+    /**
+     * Overrides abstract parent method
      */
     execute:function (commandContext) {
         if (!this.applied) {
@@ -74,9 +74,9 @@ mindplot.commands.GenericFunctionCommand = new Class(/** @lends GenericFunctionC
 
     },
 
-    /** 
+    /**
      * Overrides abstract parent method
-     * @see {@link mindplot.Command.undoExecute} 
+     * @see {@link mindplot.Command.undoExecute}
      */
     undoExecute:function (commandContext) {
         if (this.applied) {

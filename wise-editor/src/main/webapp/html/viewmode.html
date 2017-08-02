@@ -8,21 +8,20 @@
     <!--[if lt IE 9]>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <![endif]-->
-    <link rel="stylesheet/less" type="text/css" href="css/embedded.less"/>
+    <link rel="stylesheet" type="text/css" href="css/solarized-theme.css"/>
 
     <script type='text/javascript' src='js/jquery.js'></script>
     <script type='text/javascript' src='js/bootstrap.js'></script>
     <script type='text/javascript' src='js/underscore.js'></script>
     <script type='text/javascript' src='js/mootools-core.js'></script>
     <script type='text/javascript' src='js/core.js'></script>
-    <script type='text/javascript' src='js/less.js'></script>
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
     <script type="text/javascript">
 
-        var mapId = 'welcome';
+        var mapId = location.search.substr(1) || 'welcome';
         $(document).unbind().bind('loadcomplete', function (resource) {
 
             // Set readonly option ...
@@ -32,6 +31,7 @@
 
             // Load map from XML file persisted on disk...
             var persistence = mindplot.PersistenceManager.getInstance();
+            persistence.discardChanges(mapId);
             var mindmap;
             try {
                 mindmap = persistence.load(mapId);
@@ -53,14 +53,8 @@
     </div>
 </div>
 
-<div id="header">
-    <div id="headerNotifier"></div>
-    <div id="footer">
-        <div id="footerLogo"></div>
-    </div>
-</div>
-
 <div id="mindplot" onselectstart="return false;"></div>
 <script type="text/javascript" src="js/editor.js"></script>
+<script type="text/javascript" src="js/mindplot-bundle.js"></script>
 </body>
 </html>

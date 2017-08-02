@@ -65,4 +65,4 @@ mindplot.LinkIcon = new Class({
 });
 mindplot.LinkIcon.IMAGE_URL = "images/links.png";
 
- 
+

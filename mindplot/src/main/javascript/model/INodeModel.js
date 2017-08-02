@@ -224,6 +224,26 @@ mindplot.model.INodeModel = new Class(/** @lends INodeModel */{
     },
 
     /** */
+    getEdgeStrokeColor  : function() {
+        return this.getProperty('edgeStrokeColor')
+    },
+
+    /** */
+    setEdgeStrokeColor  : function(color) {
+        this.putProperty('edgeStrokeColor', color)
+    },
+
+    /** */
+    getEdgeStrokeWidth  : function() {
+        return this.getProperty('edgeStrokeWidth')
+    },
+
+    /** */
+    setEdgeStrokeWidth  : function(color) {
+        this.putProperty('edgeStrokeWidth', color)
+    },
+
+    /** */
     areChildrenShrunken  : function() {
         var result = this.getProperty('shrunken');
         return $defined(result) ? result : false;
@@ -293,7 +313,7 @@ mindplot.model.INodeModel = new Class(/** @lends INodeModel */{
     },
 
     /**
-     * lets parent handle the delete node operation, or, if none defined, calls the mindmap to 
+     * lets parent handle the delete node operation, or, if none defined, calls the mindmap to
      * remove the respective branch
      */
     deleteNode  : function() {

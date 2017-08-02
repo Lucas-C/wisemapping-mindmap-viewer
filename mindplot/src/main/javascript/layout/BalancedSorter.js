@@ -18,7 +18,7 @@
 
 mindplot.layout.BalancedSorter = new Class(/** @lends BalancedSorter */{
     Extends:mindplot.layout.AbstractBasicSorter,
-    /** 
+    /**
      * @constructs
      * @extends mindplot.layout.AbstractBasicSorter
      */
@@ -237,7 +237,7 @@ mindplot.layout.BalancedSorter = new Class(/** @lends BalancedSorter */{
     /**
      * @param {} treeSet
      * @param {} child
-     * @return the direction of the child within the treeSet 
+     * @return the direction of the child within the treeSet
      */
     getChildDirection:function (treeSet, child) {
         return child.getOrder() % 2 == 0 ? 1 : -1;

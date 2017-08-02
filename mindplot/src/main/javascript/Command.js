@@ -26,7 +26,7 @@ mindplot.Command = new Class(/** @lends mindplot.Command */{
         this._id = mindplot.Command._nextUUID();
     },
 
-    /** 
+    /**
      * @abstract
      */
     execute: function(commandContext)
@@ -34,8 +34,8 @@ mindplot.Command = new Class(/** @lends mindplot.Command */{
         throw "execute must be implemented.";
     },
 
-    /** 
-     * Triggered by the undo button - reverses the executed command 
+    /**
+     * Triggered by the undo button - reverses the executed command
      * @abstract
      */
     undoExecute: function(commandContext)
@@ -43,7 +43,7 @@ mindplot.Command = new Class(/** @lends mindplot.Command */{
         throw "undo must be implemented.";
     },
 
-    /** 
+    /**
      * Returns the unique id of this command
      * @returns {Number} command id
      */

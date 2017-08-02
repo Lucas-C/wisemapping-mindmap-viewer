@@ -197,6 +197,3 @@ editor.WaitDialog = new Class({
 // Show loading dialog ...
 waitDialog = new editor.WaitDialog();
 waitDialog.show();
-
-// Loading libraries ...
-jQuery.getScript("js/mindplot-min.js");

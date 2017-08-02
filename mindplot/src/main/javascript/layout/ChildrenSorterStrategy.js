@@ -17,7 +17,7 @@
  */
 
 mindplot.layout.ChildrenSorterStrategy = new Class(/** @lends ChildrenSorterStrategy */{
-    /** 
+    /**
      * @constructs
      */
     initialize:function() {

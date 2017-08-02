@@ -21,10 +21,10 @@ mindplot.DesignerModel = new Class(/** @lends DesignerModel */{
     /**
      * @implements {mindplot.Events}
      * @constructs
-     * @param {{readOnly: Boolean, zoom: Number, saveOnLoad: Boolean, size: {width: Number, 
-     * height: Number}, viewPort: {width: Number, height: Number}, container: String, 
+     * @param {{readOnly: Boolean, zoom: Number, saveOnLoad: Boolean, size: {width: Number,
+     * height: Number}, viewPort: {width: Number, height: Number}, container: String,
      * persistenceManager: String, mapId: String, locale: String}} options
-     * options loaded from json config 
+     * options loaded from json config
      * @see {@link ConfigParameters.md}
      * @see {@link editor.html}
      */
@@ -161,7 +161,7 @@ mindplot.DesignerModel = new Class(/** @lends DesignerModel */{
     },
 
     /**
-     * @return {mindplot.Topic} the first selected topic if one or more are found by the 
+     * @return {mindplot.Topic} the first selected topic if one or more are found by the
      * filterSelectedTopics function, null otherwise
      */
     selectedTopic:function () {

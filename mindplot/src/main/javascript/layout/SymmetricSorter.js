@@ -133,7 +133,7 @@ mindplot.layout.SymmetricSorter = new Class(/** @lends SymmetricSorter */{
         return [0, position];
     },
 
-    /** 
+    /**
      * @param treeSet
      * @param parent
      * @param child
@@ -152,7 +152,7 @@ mindplot.layout.SymmetricSorter = new Class(/** @lends SymmetricSorter */{
         child.setOrder(order);
     },
 
-    /** 
+    /**
      * @param treeSet
      * @param node
      * @throws will throw an error if the node is in the wrong position*/
@@ -170,14 +170,14 @@ mindplot.layout.SymmetricSorter = new Class(/** @lends SymmetricSorter */{
         node.setOrder(0);
     },
 
-    /** 
+    /**
      * @param treeSet
      * @param node
      * @throws will throw an error if treeSet is null or undefined
      * @throws will throw an error if node is null or undefined
-     * @throws will throw an error if the calculated x offset cannot be converted to a numeric 
+     * @throws will throw an error if the calculated x offset cannot be converted to a numeric
      * value, is null or undefined
-     * @throws will throw an error if the calculated y offset cannot be converted to a numeric 
+     * @throws will throw an error if the calculated y offset cannot be converted to a numeric
      * value, is null or undefined
      * @return offsets
      */
@@ -218,7 +218,7 @@ mindplot.layout.SymmetricSorter = new Class(/** @lends SymmetricSorter */{
         return result;
     },
 
-    /** 
+    /**
      * @param treeSet
      * @param node
      * @throws will throw an error if order elements are missing
@@ -232,7 +232,7 @@ mindplot.layout.SymmetricSorter = new Class(/** @lends SymmetricSorter */{
         }
     },
 
-    /** 
+    /**
      * @param treeSet
      * @param child
      * @return direction of the given child from its parent or from the root node, if isolated*/

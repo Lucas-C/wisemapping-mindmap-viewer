@@ -18,17 +18,17 @@
 
 mindplot.commands.MoveControlPointCommand = new Class(/** @lends MoveControlPointCommand */{
     Extends:mindplot.Command,
-    /** 
-     * @classdesc This command handles do/undo of changing the control points of a relationship 
-     * arrow. These are the two points that appear when the relationship is on focus. They 
-     * influence how the arrow is drawn (not the source or the destination topic nor the arrow 
+    /**
+     * @classdesc This command handles do/undo of changing the control points of a relationship
+     * arrow. These are the two points that appear when the relationship is on focus. They
+     * influence how the arrow is drawn (not the source or the destination topic nor the arrow
      * direction)
      * @constructs
      * @param {ControlPoint} ctrlPointController
      * @param {Number} point 0 for the destination control point, 1 for the source control point
      * @param ctrlPointController {ControlPoint}
      * @param point {Number} 0 for the destination control point, 1 for the source control point
-    */ 
+    */
     initialize:function (ctrlPointController, point) {
         $assert(ctrlPointController, 'line can not be null');
         $assert($defined(point), 'point can not be null');
@@ -52,8 +52,8 @@ mindplot.commands.MoveControlPointCommand = new Class(/** @lends MoveControlPoin
         this._point = point;
     },
 
-    /** 
-     * Overrides abstract parent method 
+    /**
+     * Overrides abstract parent method
      */
     execute:function (commandContext) {
         var model = this._line.getModel();
@@ -79,9 +79,9 @@ mindplot.commands.MoveControlPointCommand = new Class(/** @lends MoveControlPoin
         this._line.getLine().updateLine(this._point);
     },
 
-    /** 
+    /**
      * Overrides abstract parent method
-     * @see {@link mindplot.Command.undoExecute} 
+     * @see {@link mindplot.Command.undoExecute}
      */
     undoExecute:function (commandContext) {
         var line = this._line;

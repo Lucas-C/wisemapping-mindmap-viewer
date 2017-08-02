@@ -351,6 +351,16 @@ mindplot.persistence.XMLSerializer_Pela = new Class(/** @lends XMLSerializer_Pel
             topic.setMetadata(metadata);
         }
 
+        var strokeColor = domElem.getAttribute("edgeStrokeColor");
+        if ($defined(strokeColor)){
+            topic.setEdgeStrokeColor(strokeColor);
+        }
+
+        var strokeWidth = domElem.getAttribute("edgeStrokeWidth");
+        if ($defined(strokeWidth)) {
+            topic.setEdgeStrokeWidth(strokeWidth);
+        }
+
         //Creating icons and children nodes
         var children = domElem.childNodes;
         for (var i = 0; i < children.length; i++) {
@@ -453,7 +463,7 @@ mindplot.persistence.XMLSerializer_Pela = new Class(/** @lends XMLSerializer_Pel
         model.setStartArrow('true');
         return model;
     },
-    
+
     /**
      * This method ensures that the output String has only
      * valid XML unicode characters as specified by the

@@ -33,7 +33,7 @@ mindplot.model.LinkModel = new Class(/** @lends LinkModel */{
         return this.getAttribute('url');
     },
 
-    /** 
+    /**
      * @param {String} url a URL provided by the user to set the link to
      * @throws will throw an error if url is null or undefined
      */
@@ -59,7 +59,7 @@ mindplot.model.LinkModel = new Class(/** @lends LinkModel */{
 
     /**
      * @param {String} urlType the url type, either 'mail' or 'url'
-     * @throws will throw an error if urlType is null or undefined 
+     * @throws will throw an error if urlType is null or undefined
      */
     setUrlType:function (urlType) {
         $assert(urlType, 'urlType can not be null');

@@ -17,7 +17,7 @@
  */
 
 mindplot.layout.ChangeEvent = new Class(/** @lends ChangeEvent */{
-    /** 
+    /**
      * @constructs
      * @param {} id
      * @throws will throw an error if the given id is not/cannot be converted to a numerical value
@@ -44,8 +44,8 @@ mindplot.layout.ChangeEvent = new Class(/** @lends ChangeEvent */{
         return this._position;
     },
 
-    /** 
-     * @param {} value the order to set 
+    /**
+     * @param {} value the order to set
      * @throws will throw an error if the given parameter is not/cannot be converted to a numerical
      * value
      */

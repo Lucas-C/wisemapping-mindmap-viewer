@@ -110,8 +110,8 @@ mindplot.widget.LinkEditor = new Class(/** @lends LinkEditor */{
         return result;
     },
 
-    /** 
-     * checks whether the input is a valid url 
+    /**
+     * checks whether the input is a valid url
      * @return {Boolean} true if the url is valid
      */
     checkURL: function(url){
@@ -134,7 +134,7 @@ mindplot.widget.LinkEditor = new Class(/** @lends LinkEditor */{
 
     /**
      * overrides parent method
-     * sets the url input on focus 
+     * sets the url input on focus
      */
     onDialogShown: function() {
         $(this).find('#inputUrl').focus();

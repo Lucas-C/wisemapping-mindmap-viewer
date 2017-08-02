@@ -18,7 +18,7 @@
 
 mindplot.commands.DragTopicCommand = new Class(/** @lends DragTopicCommand */{
     Extends:mindplot.Command,
-    /** 
+    /**
      * @classdesc This command class handles do/undo of dragging a topic to a new position.
      * @constructs
      * @param {String} topicId id of the topic to drag
@@ -39,8 +39,8 @@ mindplot.commands.DragTopicCommand = new Class(/** @lends DragTopicCommand */{
         this._order = order;
     },
 
-    /** 
-     * Overrides abstract parent method 
+    /**
+     * Overrides abstract parent method
      */
     execute:function (commandContext) {
 
@@ -90,9 +90,9 @@ mindplot.commands.DragTopicCommand = new Class(/** @lends DragTopicCommand */{
 
     },
 
-    /** 
+    /**
      * Overrides abstract parent method
-     * @see {@link mindplot.Command.undoExecute} 
+     * @see {@link mindplot.Command.undoExecute}
      */
     undoExecute:function (commandContext) {
         this.execute(commandContext);
