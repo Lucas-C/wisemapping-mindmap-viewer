@@ -48,7 +48,7 @@ mindplot.persistence.XMLSerializerFactory.getSerializerFromDocument = function(d
  */
 mindplot.persistence.XMLSerializerFactory.getSerializer = function(version) {
     if (!$defined(version)) {
-        version = mindplot.persistence.ModelCodeName.BETA;
+        throw "Unsupported retrocompatibilty: version required";
     }
     var codeNames = mindplot.persistence.XMLSerializerFactory._codeNames;
     var found = false;
@@ -69,12 +69,6 @@ mindplot.persistence.XMLSerializerFactory.getSerializer = function(version) {
 
 mindplot.persistence.XMLSerializerFactory._codeNames =
     [
-        {
-            codeName:mindplot.persistence.ModelCodeName.BETA,
-            serializer: mindplot.persistence.XMLSerializer_Beta,
-            migrator:function() {
-            }
-        },
         {
             codeName:mindplot.persistence.ModelCodeName.PELA,
             serializer:mindplot.persistence.XMLSerializer_Pela,
