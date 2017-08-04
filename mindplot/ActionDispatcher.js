@@ -19,9 +19,6 @@
 //noinspection JSUnusedLocalSymbols
 mindplot.ActionDispatcher = new Class({
     Implements:[mindplot.Events],
-    initialize: function(commandContext) {
-        $assert(commandContext, "commandContext can not be null");
-    },
 
     addRelationship: function(model, mindmap) {
         throw "method must be implemented.";

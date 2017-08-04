@@ -18,13 +18,39 @@
 
 mindplot.StandaloneActionDispatcher = new Class(/** @lends StandaloneActionDispatcher */{
     Extends: mindplot.ActionDispatcher,
-    /**
-     * @extends mindplot.ActionDispatcher
-     * @constructs
-     * @param {mindplot.CommandContext} commandContext
-     */
-    initialize: function (commandContext) {
-        this.parent(commandContext);
+
+    initialize: function (designer) {
+        this._designer = designer;
+    },
+
+    /** */
+    shrinkBranch: function (topicsIds, collapse) {
+        $assert(topicsIds, "topicsIds can not be null");
+        _.each(this.findTopics(topicsIds), function (topic) {
+            topic.setChildrenShrunken(collapse);
+        });
+    },
+
+    /** */
+    findTopics: function (topicsIds) {
+        $assert($defined(topicsIds), "topicsIds can not be null");
+        if (!(topicsIds instanceof Array)) {
+            topicsIds = [topicsIds];
+        }
+
+        var designerTopics = this._designer.getModel().getTopics();
+        var result = designerTopics.filter(function (topic) {
+            return topicsIds.contains(topic.getId());
+        });
+
+        if (result.length != topicsIds.length) {
+            var ids = designerTopics.map(function (topic) {
+                return topic.getId();
+            });
+            $assert(result.length == topicsIds.length, "Could not find topic. Result:" + result + ", Filter Criteria:" +
+topicsIds + ", Current Topics: [" + ids + "]");
+        }
+        return result;
     },
 });
 
