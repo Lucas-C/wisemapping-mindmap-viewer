@@ -5,7 +5,11 @@ Inspired by https://framagit.org/framasoft/framindmap
 Usage:
 
     make
-    python3 -m http.server  # then open http://localhost:8000/wise-editor/src/main/webapp/html/viewmode.html
+    python3 -m http.server  # then open http://localhost:8000/wise-editor/src/main/webapp/html/viewmode.html?optional_mindmap_name
+
+`optional_mindmap_name.xml` must be in `wise-editor/src/main/webapp/samples`.
+
+You can create those XML files from simple indented Markdown files with this: https://github.com/Lucas-C/linux_configuration/tree/master/languages/python/mindmaps
 
 <!--
 TODO:
