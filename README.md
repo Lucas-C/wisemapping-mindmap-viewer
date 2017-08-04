@@ -5,7 +5,7 @@ Fork of https://bitbucket.org/wisemapping/wisemapping-open-source, inspired by h
 Usage:
 
     make
-    python3 -m http.server  # then open http://localhost:8000/mindmap-viewer/html/viewmode.html?optional_mindmap_name
+    python3 -m http.server  # then open http://localhost:8000/mindmap-viewer/?optional_mindmap_name
 
 `optional_mindmap_name.xml` must be in `mindmap-viewer/samples`.
 

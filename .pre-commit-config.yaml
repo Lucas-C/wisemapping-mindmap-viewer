@@ -13,3 +13,10 @@
     -   id: remove-crlf
         exclude: npp/.*\.xml
     -   id: remove-tabs
+-   repo: local
+    hooks:
+    -   id: make
+        name: make
+        language: system
+        entry: make
+        files: ''

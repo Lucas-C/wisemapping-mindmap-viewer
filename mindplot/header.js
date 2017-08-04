@@ -18,7 +18,6 @@
 
 var mindplot = {};
 mindplot.util = {};
-mindplot.commands = {};
 mindplot.layout = {};
 mindplot.layout.boards = {};
 mindplot.layout.boards.original = {};

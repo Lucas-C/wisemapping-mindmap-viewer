@@ -38,16 +38,6 @@ mindplot.Designer = new Class(/** @lends Designer */{
             // Set full div elem render area ...
             divElement.css(options.size);
 
-            // Dispatcher manager ...
-            var commandContext = new mindplot.CommandContext(this);
-            this._actionDispatcher = new mindplot.StandaloneActionDispatcher(commandContext);
-
-            var me = this;
-            this._actionDispatcher.addEvent("modelUpdate", function (event) {
-                me.fireEvent("modelUpdate", event);
-            });
-
-            mindplot.ActionDispatcher.setInstance(this._actionDispatcher);
             this._model = new mindplot.DesignerModel(options);
 
             // Init Screen manager..
@@ -140,7 +130,6 @@ mindplot.Designer = new Class(/** @lends Designer */{
                     var mousePos = screenManager.getWorkspaceMousePosition(event);
                     var centralTopic = me.getModel().getCentralTopic();
                     var model = me._createChildModel(centralTopic, mousePos);
-                    this._actionDispatcher.addTopics([model], [centralTopic.getId()]);
                 }
             }.bind(this));
 
@@ -402,7 +391,6 @@ mindplot.Designer = new Class(/** @lends Designer */{
                 $notify($msg('CLIPBOARD_IS_EMPTY'));
                 return;
             }
-            this._actionDispatcher.addTopics(this._clipboard);
             this._clipboard = [];
         },
 
@@ -420,14 +408,8 @@ mindplot.Designer = new Class(/** @lends Designer */{
                 return;
 
             }
-            // Execute event ...
-            var topic = nodes[0];
-            if (topic.getType() != mindplot.model.INodeModel.CENTRAL_TOPIC_TYPE) {
-                this._actionDispatcher.shrinkBranch([topic.getId()], !topic.areChildrenShrunken());
-            }
         },
 
-        /** create a NodeModel for the selected node's child and add it via the ActionDispatcher */
         createChildForSelectedNode: function () {
             var nodes = this.getModel().filterSelectedTopics();
             if (nodes.length <= 0) {
@@ -447,10 +429,6 @@ mindplot.Designer = new Class(/** @lends Designer */{
             var parentTopic = nodes[0];
             var parentTopicId = parentTopic.getId();
             var childModel = this._createChildModel(parentTopic);
-
-            // Execute event ...
-            this._actionDispatcher.addTopics([childModel], [parentTopicId]);
-
         },
 
         /**
@@ -538,12 +516,6 @@ mindplot.Designer = new Class(/** @lends Designer */{
 
             // Position far from the visual area ...
             model.setPosition(1000, 1000);
-
-            this._actionDispatcher.addTopics([model]);
-            var topic = this.getModel().findTopicById(model.getId());
-
-            // Simulate a mouse down event to start the dragging ...
-            topic.fireEvent("mousedown", event);
         },
 
         /**
@@ -578,9 +550,6 @@ mindplot.Designer = new Class(/** @lends Designer */{
                 if (parentTopic.getType() == mindplot.model.INodeModel.CENTRAL_TOPIC_TYPE) {
                     siblingModel.setOrder(topic.getOrder() + 2);
                 }
-
-                var parentTopicId = parentTopic.getId();
-                this._actionDispatcher.addTopics([siblingModel], [parentTopicId]);
             }
         },
 
@@ -690,13 +659,10 @@ mindplot.Designer = new Class(/** @lends Designer */{
 
         /** */
         undo: function () {
-            // @Todo: This is a hack...
-            this._actionDispatcher._actionRunner.undo();
         },
 
         /** */
         redo: function () {
-            this._actionDispatcher._actionRunner.redo();
         },
 
         /** */
@@ -889,102 +855,42 @@ mindplot.Designer = new Class(/** @lends Designer */{
             var relIds = relation.map(function (rel) {
                 return rel.getId();
             });
-
-            // Finally delete the topics ...
-            if (topicIds.length > 0 || relIds.length > 0) {
-                this._actionDispatcher.deleteEntities(topicIds, relIds);
-            }
-
         },
 
         /** */
         changeFontFamily: function (font) {
-            var topicsIds = this.getModel().filterTopicsIds();
-            if (topicsIds.length > 0) {
-                this._actionDispatcher.changeFontFamilyToTopic(topicsIds, font);
-
-            }
         },
 
         /** */
         changeFontStyle: function () {
-            var topicsIds = this.getModel().filterTopicsIds();
-            if (topicsIds.length > 0) {
-                this._actionDispatcher.changeFontStyleToTopic(topicsIds);
-            }
         },
 
         /** */
         changeFontColor: function (color) {
-            $assert(color, "color can not be null");
-
-            var topicsIds = this.getModel().filterTopicsIds();
-            if (topicsIds.length > 0) {
-                this._actionDispatcher.changeFontColorToTopic(topicsIds, color);
-            }
         },
 
         /** */
         changeBackgroundColor: function (color) {
-
-            var validateFunc = function (topic) {
-                return topic.getShapeType() != mindplot.model.TopicShape.LINE;
-            };
-            var validateError = 'Color can not be set to line topics.';
-
-            var topicsIds = this.getModel().filterTopicsIds(validateFunc, validateError);
-            if (topicsIds.length > 0) {
-                this._actionDispatcher.changeBackgroundColorToTopic(topicsIds, color);
-            }
         },
 
         /** */
         changeBorderColor: function (color) {
-            var validateFunc = function (topic) {
-                return topic.getShapeType() != mindplot.model.TopicShape.LINE;
-            };
-            var validateError = 'Color can not be set to line topics.';
-            var topicsIds = this.getModel().filterTopicsIds(validateFunc, validateError);
-            if (topicsIds.length > 0) {
-                this._actionDispatcher.changeBorderColorToTopic(topicsIds, color);
-            }
         },
 
         /** */
         changeFontSize: function (size) {
-            var topicsIds = this.getModel().filterTopicsIds();
-            if (topicsIds.length > 0) {
-                this._actionDispatcher.changeFontSizeToTopic(topicsIds, size);
-            }
         },
 
         /** */
         changeTopicShape: function (shape) {
-            var validateFunc = function (topic) {
-                return !(topic.getType() == mindplot.model.INodeModel.CENTRAL_TOPIC_TYPE && shape == mindplot.model.TopicShape.LINE)
-            };
-
-            var validateError = 'Central Topic shape can not be changed to line figure.';
-            var topicsIds = this.getModel().filterTopicsIds(validateFunc, validateError);
-            if (topicsIds.length > 0) {
-                this._actionDispatcher.changeShapeTypeToTopic(topicsIds, shape);
-            }
         },
 
         /** */
         changeFontWeight: function () {
-            var topicsIds = this.getModel().filterTopicsIds();
-            if (topicsIds.length > 0) {
-                this._actionDispatcher.changeFontWeightToTopic(topicsIds);
-            }
         },
 
         /** */
         addIconType: function (iconType) {
-            var topicsIds = this.getModel().filterTopicsIds();
-            if (topicsIds.length > 0) {
-                this._actionDispatcher.addFeatureToTopic(topicsIds[0], mindplot.TopicFeature.Icon.id, {id: iconType});
-            }
         },
 
         /**
