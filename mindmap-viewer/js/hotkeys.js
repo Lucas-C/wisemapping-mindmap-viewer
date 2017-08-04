@@ -1,0 +1,1 @@
+../../mindplot/libraries/hotkeys/jquery.hotkeys.js

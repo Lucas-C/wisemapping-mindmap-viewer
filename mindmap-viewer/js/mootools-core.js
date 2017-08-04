@@ -1,0 +1,1 @@
+../../mindplot/libraries/mootools/mootools-core-1.4.5-full-nocompat-yc.js
