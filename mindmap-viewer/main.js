@@ -16,8 +16,6 @@
  *   limitations under the License.
  */
 
-var designer = null;
-
 
 /*
  * Disclaimer: this global variable is a temporary workaround to Mootools' Browser class
@@ -40,104 +38,39 @@ Browser = {
     }
 };
 
-function buildDesigner(options) {
+function displayMindmap(options) {
+    waitDialog = new editor.WaitDialog();
+    waitDialog.show();
 
     var container = $("#" + options.container);
     $assert(container, 'container could not be null');
 
     // Register load events ...
-    designer = new mindplot.Designer(options, container);
+    var designer = new mindplot.Designer(options, container);
     designer.addEvent('loadSuccess', function () {
         window.waitDialog.close();
         window.waitDialog = null;
         window.mindmapLoadReady = true;
     });
 
-    var onerrorFn = function (message, url, lineNo) {
-
-        // Ignore errors ...
-        if (message === "Script error." && lineNo == 0) {
-            // http://stackoverflow.com/questions/5913978/cryptic-script-error-reported-in-javascript-in-chrome-and-firefox
-            return;
-        }
-
-        // Transform error ...
-        var errorMsg = message;
-        if (typeof(message) === 'object' && message.srcElement && message.target) {
-            if (message.srcElement == '[object HTMLScriptElement]' && message.target == '[object HTMLScriptElement]') {
-                errorMsg = 'Error loading script';
-            } else {
-                errorMsg = 'Event Error - target:' + message.target + ' srcElement:' + message.srcElement;
-            }
-        }
-        errorMsg = errorMsg.toString();
-
-        $.ajax({
-            method: 'post',
-            url: "/c/restful/logger/editor",
-            headers: {"Content-Type": "application/json", "Accept": "application/json"},
-            data: JSON.stringify({
-                jsErrorMsg: "Message: '" + errorMsg + "', line:'" + lineNo + "', url: :" + url,
-                jsStack: window.event.error.stack || window.errorStack,
-                userAgent: navigator.userAgent,
-                mapId: options.mapId
-            })
-        });
-
-        // Close loading dialog ...
-        if (window.waitDialog) {
-            window.waitDialog.close();
-            window.waitDialog = null;
-        }
-
-        // Open error dialog only in case of mindmap loading errors. The rest of the error are reported but not display the dialog.
-        // Remove this in the near future.
-        if (!window.mindmapLoadReady) {
-            $notifyModal($msg('UNEXPECTED_ERROR_LOADING'));
-        }
-    };
-
-    window.onerror = onerrorFn;
-
     // Configure default persistence manager ...
     var persistence;
     if (options.persistenceManager) {
         if (options.persistenceManager instanceof String) {
             persistence = eval("new " + options.persistenceManager + "()");
-        }
-        else {
+        } else {
             persistence = options.persistenceManager;
         }
-
     } else {
         persistence = new mindplot.LocalStorageManager("samples/{id}.xml");
     }
     mindplot.PersistenceManager.init(persistence);
 
-    return designer;
-}
+    var persistence = mindplot.PersistenceManager.getInstance();
+    persistence.discardChanges(options.mapId);  // Removing mindmap from local storage to avoid caching issues
+    var mindmap = persistence.load(options.mapId);
 
-
-function defaultDesignerOptions() {
-    // Set workspace screen size as default. In this way, resize issues are solved.
-    var containerSize = {
-        height: parseInt(screen.height),
-        width: parseInt(screen.width)
-    };
-
-    var viewPort = {
-        height: parseInt(window.innerHeight - 70), // Footer and Header
-        width: parseInt(window.innerWidth)
-    };
-    return {
-        readOnly: false,
-        zoom: 0.85,
-        saveOnLoad: true,
-        size: containerSize,
-        viewPort: viewPort,
-        container: 'mindplot',
-        locale: 'en'
-    };
+    designer.loadMap(mindmap);
 }
 
 editor = {};
@@ -165,7 +98,3 @@ editor.WaitDialog = new Class({
         this.panel.modal('hide');
     }
 });
-
-// Show loading dialog ...
-waitDialog = new editor.WaitDialog();
-waitDialog.show();

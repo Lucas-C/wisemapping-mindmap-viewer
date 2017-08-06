@@ -17,7 +17,7 @@ You can create those XML files from simple indented Markdown files with this Pyt
 
 <!--
 TODO:
-- get rid of symlinks
+- fix viewport/size
 - `&solarize_theme`: `ag -Q 'rgb(82,92,97)'`
 - expand the mindmap at start
 - `Synchronous XMLHttpRequest` warning comes from the way XML mindmaps are loaded in LocalStorageManager.js

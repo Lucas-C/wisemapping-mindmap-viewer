@@ -1,0 +1,5 @@
+libraries/jquery.js
+libraries/bootstrap.js
+libraries/underscore.js
+libraries/mootools-core.js
+libraries/core.js
