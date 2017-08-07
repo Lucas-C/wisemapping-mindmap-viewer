@@ -9,9 +9,9 @@ https://chezsoi.org/lucas/mindmap/mindmap-viewer/?Absence
 # Usage
 
     make
-    python3 -m http.server  # then open http://localhost:8000/mindmap-viewer/?optional_mindmap_name
+    python3 -m http.server  # then open http://localhost:8000/?optional_mindmap_name
 
-`optional_mindmap_name.xml` must be in `mindmap-viewer/samples`.
+`optional_mindmap_name.xml` must be in `samples`.
 
 You can create those XML files from simple indented Markdown files with this Python script: https://github.com/Lucas-C/linux_configuration/tree/master/languages/python/mindmaps
 
