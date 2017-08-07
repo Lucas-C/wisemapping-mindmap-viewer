@@ -1,4 +1,4 @@
-mindplot.Messages.BUNDLES['zh_tw'] = { 
+mindplot.Messages.BUNDLES['zh_tw'] = {
 '﻿ZOOM_IN' : "放大",
 'ZOOM_OUT' : "縮小",
 'TOPIC_SHAPE' : "節點外形",
@@ -48,5 +48,5 @@ mindplot.Messages.BUNDLES['zh_tw'] = {
 'CENTRAL_TOPIC_CAN_NOT_BE_DELETED' : "不能刪除根節點。",
 'RELATIONSHIP_COULD_NOT_BE_CREATED' : "不能創建關係。 應先選擇創建關係的一對上級節點。",
 'SELECTION_COPIED_TO_CLIPBOARD' : "節點已拷貝到粘貼板。",
-'DUMMY' : '' 
+'DUMMY' : ''
 };

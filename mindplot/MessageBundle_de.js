@@ -1,4 +1,4 @@
-mindplot.Messages.BUNDLES['de'] = { 
+mindplot.Messages.BUNDLES['de'] = {
 'ZOOM_IN' : "Ansicht vergrößern",
 'ZOOM_OUT' : "Ansicht verkleinern",
 'TOPIC_SHAPE' : "Themen Gestaltung",
@@ -54,5 +54,5 @@ mindplot.Messages.BUNDLES['de'] = {
 'CANCEL' : "Abbrechen",
 'LINK' : "Verbindung",
 'OPEN_LINK' : "Öffne URL",
-'DUMMY' : '' 
+'DUMMY' : ''
 };

@@ -1,4 +1,4 @@
-mindplot.Messages.BUNDLES['en'] = { 
+mindplot.Messages.BUNDLES['en'] = {
 'ZOOM_IN' : "Zoom In",
 'ZOOM_OUT' : "Zoom Out",
 'TOPIC_SHAPE' : "Topic Shape",
@@ -56,5 +56,5 @@ mindplot.Messages.BUNDLES['en'] = {
 'OPEN_LINK' : "Open URL",
 'SESSION_EXPIRED' : "Your session has expired, please log-in again.",
 'URL_ERROR' : "URL not valid",
-'DUMMY' : '' 
+'DUMMY' : ''
 };

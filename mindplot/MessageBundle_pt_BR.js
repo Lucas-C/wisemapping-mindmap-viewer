@@ -1,4 +1,4 @@
-mindplot.Messages.BUNDLES['pt_br'] = { 
+mindplot.Messages.BUNDLES['pt_br'] = {
 'ZOOM_IN' : "Ampliar",
 'ZOOM_OUT' : "Reduzir",
 'TOPIC_SHAPE' : "Forma do T\u00f3pico",
@@ -48,5 +48,5 @@ mindplot.Messages.BUNDLES['pt_br'] = {
 'RELATIONSHIP_COULD_NOT_BE_CREATED' : "A relação não pode ser criada. Uma relação pai deve ser selecionada primeiro.",
 'SELECTION_COPIED_TO_CLIPBOARD' : "Tópicos copiados ao clipboard.",
 'ONLY_ONE_TOPIC_MUST_BE_SELECTED_COLLAPSE' : "Tópicos filhos não podem ser colapsados. Só um tópico deve ser selecionado.",
-'DUMMY' : '' 
+'DUMMY' : ''
 };

@@ -1,4 +1,4 @@
-mindplot.Messages.BUNDLES['fr'] = { 
+mindplot.Messages.BUNDLES['fr'] = {
 'ZOOM_IN' : "Agrandir affichage",
 'ZOOM_OUT' : "Réduire affichage",
 'TOPIC_SHAPE' : "Forme du noeud",
@@ -53,5 +53,5 @@ mindplot.Messages.BUNDLES['fr'] = {
 'REMOVE' : "Supprimer",
 'WRITE_YOUR_TEXT_HERE' : "Écrivez votre texte ici ...",
 'LINK' : "Lien",
-'DUMMY' : '' 
+'DUMMY' : ''
 };

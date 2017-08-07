@@ -1,4 +1,4 @@
-mindplot.Messages.BUNDLES['es'] = { 
+mindplot.Messages.BUNDLES['es'] = {
 'DISCARD_CHANGES' : "Descartar Cambios",
 'SAVE' : "Guardar",
 'INSERT' : "Insertar",
@@ -55,5 +55,5 @@ mindplot.Messages.BUNDLES['es'] = {
 'LINK' : "Enlace",
 'OPEN_LINK' : "Abrir Enlace",
 'SESSION_EXPIRED' : "Su session ha expirado. Por favor, ingrese nuevamente.",
-'DUMMY' : '' 
+'DUMMY' : ''
 };

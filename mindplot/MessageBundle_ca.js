@@ -1,4 +1,4 @@
-mindplot.Messages.BUNDLES['ca'] = { 
+mindplot.Messages.BUNDLES['ca'] = {
 'DISCARD_CHANGES' : "Descartar els canvis",
 'SAVE' : "Desar",
 'INSERT' : "Inserir",
@@ -55,5 +55,5 @@ mindplot.Messages.BUNDLES['ca'] = {
 'LINK' : "Enllaç",
 'OPEN_LINK' : "Obrir Enllaç",
 'SESSION_EXPIRED' : "La seva sessió ha finalitzat. Si us plau, torni a connectar-se.",
-'DUMMY' : '' 
+'DUMMY' : ''
 };

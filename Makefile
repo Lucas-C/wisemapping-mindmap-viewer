@@ -1,18 +1,18 @@
 # BEWARE ! Makefiles require the use of hard tabs
 
-OUT_MINDLPOT_JS_BUNDLE := mindmap-viewer/mindplot-bundle.js
-OUT_VENDOR_JS_BUNDLE := mindmap-viewer/vendor-bundle.js
+OUT_MINDLPOT_JS_BUNDLE := mindplot-bundle.js
+OUT_VENDOR_JS_BUNDLE := vendor-bundle.js
 
 .PHONY: all clean
 
 all: $(OUT_MINDLPOT_JS_BUNDLE) $(OUT_VENDOR_JS_BUNDLE)
 	@:
 
-$(OUT_MINDLPOT_JS_BUNDLE): mindplot-ordered-files.txt mindplot/*.js
+$(OUT_MINDLPOT_JS_BUNDLE): mindplot/files-order.txt mindplot/*.js
 	cat $$(cat $<) > $@
 
-$(OUT_VENDOR_JS_BUNDLE): vendor-ordered-files.txt libraries/*.js
+$(OUT_VENDOR_JS_BUNDLE): libraries/files-order.txt libraries/*.js
 	cat $$(cat $<) > $@
- 
+
 clean:
 	@$(RM) $(OUT_MINDLPOT_JS_BUNDLE) $(OUT_VENDOR_JS_BUNDLE)

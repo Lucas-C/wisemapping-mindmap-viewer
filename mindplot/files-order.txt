@@ -1,3 +1,4 @@
+mindplot/core-utils.js
 mindplot/header.js
 mindplot/Events.js
 mindplot/Options.js
