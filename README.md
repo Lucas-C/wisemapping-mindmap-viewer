@@ -2,18 +2,31 @@ Simple web mindmap renderer.
 
 Fork of https://bitbucket.org/wisemapping/wisemapping-open-source, inspired by https://framagit.org/framasoft/framindmap
 
+
 # Demo
 
 https://chezsoi.org/lucas/mindmap/mindmap-viewer/?Absence
 
+
 # Usage
+
+Once the JS bundle is generated, any static files web server will do the job.
+E.g. with Python:
 
     make
     python3 -m http.server  # then open http://localhost:8000/?optional_mindmap_name
 
-`optional_mindmap_name.xml` must be in `samples`.
+Where `optional_mindmap_name.xml` must be in `samples`.
 
 You can create those XML files from simple indented Markdown files with this Python script: https://github.com/Lucas-C/linux_configuration/tree/master/languages/python/mindmaps
+
+
+# Developpement
+
+Using [livereload](https://github.com/lepture/python-livereload) (do not forget to define the `$BROWSER` env variable, or else `lynx` may fire up):
+
+    livereload -d -o2 -t mindmap-viewer-bundle.js . & watch -n 1 make
+
 
 <!--
 TODO:
