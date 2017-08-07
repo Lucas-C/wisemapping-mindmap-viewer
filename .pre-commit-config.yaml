@@ -5,8 +5,6 @@
     -   id: trailing-whitespace
         args:
         - --no-markdown-linebreak-ext
-    -   id: check-xml
-    -   id: check-yaml
 -   repo: git://github.com/Lucas-C/pre-commit-hooks
     sha: v1.0.1
     hooks:

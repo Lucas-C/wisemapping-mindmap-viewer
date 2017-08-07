@@ -45,6 +45,10 @@ function displayMindmap(options) {
     var container = $("#" + options.container);
     $assert(container, 'container could not be null');
 
+    if (typeof(options.readOnly) != 'undefined') { // anyway, ultimately, I want to get rid of any non-readOnly feature
+        options.readOnly = true;
+    }
+
     // Register load events ...
     var designer = new mindplot.Designer(options, container);
     designer.addEvent('loadSuccess', function () {

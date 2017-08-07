@@ -8,6 +8,8 @@
     <![endif]-->
     <style>
     #mindplot {
+        width: 95vw;
+        height: 95vh;
         background-image: url(images/logo-small.png);
         background-repeat: no-repeat;
         background-position: 95% 5%;
@@ -15,6 +17,7 @@
     /* where to define those theme colors ? */
     body {
         background-color: #012b37;
+        margin: 0;
     }
     </style>
 
@@ -37,17 +40,7 @@
         displayMindmap({
             mapId: location.search.substr(1) || 'welcome',
             container: 'mindplot',
-            readOnly: true,
-            zoom: 0.85,
-            // Set workspace screen size as default. In this way, resize issues are solved.
-            size: {
-                height: parseInt(screen.height),
-                width: parseInt(screen.width),
-            },
-            viewPort: {
-                height: parseInt(window.innerHeight),
-                width: parseInt(window.innerWidth),
-            },
+            zoom: 0.5,
         });
     </script>
 </body>

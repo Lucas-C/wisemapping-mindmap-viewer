@@ -5,7 +5,7 @@ Fork of https://bitbucket.org/wisemapping/wisemapping-open-source, inspired by h
 
 # Demo
 
-https://chezsoi.org/lucas/mindmap/mindmap-viewer/?Absence
+https://chezsoi.org/lucas/mindmap/mindmap-viewer
 
 
 # Usage
@@ -25,12 +25,11 @@ You can create those XML files from simple indented Markdown files with this Pyt
 
 Using [livereload](https://github.com/lepture/python-livereload) (do not forget to define the `$BROWSER` env variable, or else `lynx` may fire up):
 
-    livereload -d -o2 -t mindmap-viewer-bundle.js . & watch -n 1 make
+    livereload --open-url-delay 1 --target mindmap-viewer-bundle.js . & watch -n 1 make
 
 
 <!--
 TODO:
-- fix viewport/size
 - `&solarize_theme`: `ag -Q 'rgb(82,92,97)'`
 - expand the mindmap at start
 - `Synchronous XMLHttpRequest` warning comes from the way XML mindmaps are loaded in LocalStorageManager.js

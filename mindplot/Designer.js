@@ -27,16 +27,12 @@ mindplot.Designer = new Class(/** @lends Designer */{
         initialize: function (options, divElement) {
             $assert(options, "options must be defined");
             $assert(options.zoom, "zoom must be defined");
-            $assert(options.size, "size must be defined");
             $assert(divElement, "divElement must be defined");
 
             // Set up i18n location ...
             mindplot.Messages.init(options.locale);
 
             this._options = options;
-
-            // Set full div elem render area ...
-            divElement.css(options.size);
 
             // Dispatcher manager ...
             this._actionDispatcher = new mindplot.StandaloneActionDispatcher(this);
@@ -69,9 +65,6 @@ mindplot.Designer = new Class(/** @lends Designer */{
             this._registerWheelEvents();
 
             this._relPivot = new mindplot.RelationshipPivot(this._workspace, this);
-
-            // Set editor working area ...
-            this.setViewPort(options.viewPort);
 
             mindplot.TopicEventDispatcher.configure(this.isReadOnly());
             this._clipboard = [];
