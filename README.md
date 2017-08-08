@@ -23,6 +23,9 @@ You can create those XML files from simple indented Markdown files with this Pyt
 
 # Developpement
 
+The global project architecture is discribed here: https://wisemapping.atlassian.net/wiki/display/WS/Architecture
+The JS files loading order matters and is managed by the `Makefile`.
+
 Using [livereload](https://github.com/lepture/python-livereload) (do not forget to define the `$BROWSER` env variable, or else `lynx` may fire up):
 
     livereload --open-url-delay 1 --target mindmap-viewer-bundle.js . & watch -n 1 make
