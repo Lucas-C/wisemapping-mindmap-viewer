@@ -1,8 +1,6 @@
-mindplot/core-utils.js
 mindplot/header.js
 mindplot/Events.js
 mindplot/Options.js
-mindplot/web2d.svg-min.js
 mindplot/Messages.js
 mindplot/TopicEventDispatcher.js
 mindplot/model/IMindmap.js

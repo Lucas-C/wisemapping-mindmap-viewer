@@ -38,6 +38,32 @@ Browser = {
     }
 };
 
+editor = {};
+editor.WaitDialog = new Class({
+    initialize: function () {
+        this.panel = this._buildPanel();
+    },
+
+    _buildPanel: function () {
+        var result = $('#load');
+        var content = result.find('.modal-content');
+        var winH = $(window).height();
+        //Set the popup window to center
+        content.css('margin-top', winH / 2 - content.height() / 2);
+        return result;
+    },
+
+    show: function () {
+        this.panel.modal({
+            backdrop: 'static'
+        });
+    },
+
+    close: function () {
+        this.panel.modal('hide');
+    }
+});
+
 function displayMindmap(options) {
     waitDialog = new editor.WaitDialog();
     waitDialog.show();
@@ -76,29 +102,3 @@ function displayMindmap(options) {
 
     designer.loadMap(mindmap);
 }
-
-editor = {};
-editor.WaitDialog = new Class({
-    initialize: function () {
-        this.panel = this._buildPanel();
-    },
-
-    _buildPanel: function () {
-        var result = $('#load');
-        var content = result.find('.modal-content');
-        var winH = $(window).height();
-        //Set the popup window to center
-        content.css('margin-top', winH / 2 - content.height() / 2);
-        return result;
-    },
-
-    show: function () {
-        this.panel.modal({
-            backdrop: 'static'
-        });
-    },
-
-    close: function () {
-        this.panel.modal('hide');
-    }
-});
