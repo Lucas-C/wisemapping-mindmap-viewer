@@ -30,6 +30,9 @@ Using [livereload](https://github.com/lepture/python-livereload) (do not forget 
 
     livereload --open-url-delay 1 --target mindmap-viewer-bundle.js . & watch -n 1 make
 
+## XSD schema
+
+The `mindmap-schema.svg` is an interactive SVG visualisation of the eponymous XSD schema alongside, and was generated with `xsdvi`.
 
 <!--
 TODO:
