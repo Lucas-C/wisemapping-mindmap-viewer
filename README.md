@@ -37,7 +37,17 @@ The `mindmap-schema.svg` is an interactive SVG visualisation of the eponymous XS
 <!--
 TODO:
 - `&solarize_theme`: `ag -Q 'rgb(82,92,97)'`
-- expand the mindmap at start
+- visually:
+  * chg default root node bgColor & brColor
+  * unfocus root node at start
+  * root node transparent bg/brColor
+  * provide control on how "packed" is the mindmap
+  * add srcCtrlPoint/destCtrlPoint to relationships
+  * viewport mess: mindmap peu dépasser au démarrage + resizing small->big pas supporté
+  * keystrokes are captured (ex: CTRL+ALT+I, CTRL+H) : why ???
+- implémenter .A.B insertion
+- publish Python code on pypi
+- try another syntax parser than pyparsing
 - `Synchronous XMLHttpRequest` warning comes from the way XML mindmaps are loaded in LocalStorageManager.js
 - restore unit tests from repo history
 -->
