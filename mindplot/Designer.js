@@ -667,7 +667,6 @@ mindplot.Designer = new Class(/** @lends Designer */{
 
             // Place the focus on the Central Topic
             var centralTopic = this.getModel().getCentralTopic();
-            this.goToNode(centralTopic);
 
             // Finally, sort the map ...
             mindplot.EventBus.instance.fireEvent(mindplot.EventBus.events.DoLayout);

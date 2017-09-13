@@ -66,67 +66,90 @@ mindplot.TopicStyle = new Class({
     }
 });
 
+if (!window.CENTRAL_TOPIC_STYLE) {
+    window.CENTRAL_TOPIC_STYLE = {};
+}
+if (!window.CENTRAL_TOPIC_STYLE.fontStyle) {
+    window.CENTRAL_TOPIC_STYLE.fontStyle = {};
+}
+if (!window.MAIN_TOPIC_STYLE) {
+    window.MAIN_TOPIC_STYLE = {};
+}
+if (!window.MAIN_TOPIC_STYLE.fontStyle) {
+    window.MAIN_TOPIC_STYLE.fontStyle = {};
+}
+if (!window.SUB_TOPIC_STYLE) {
+    window.SUB_TOPIC_STYLE = {};
+}
+if (!window.SUB_TOPIC_STYLE.fontStyle) {
+    window.SUB_TOPIC_STYLE.fontStyle = {};
+}
+if (!window.ISOLATED_TOPIC_STYLE) {
+    window.ISOLATED_TOPIC_STYLE = {};
+}
+if (!window.ISOLATED_TOPIC_STYLE.fontStyle) {
+    window.ISOLATED_TOPIC_STYLE.fontStyle = {};
+}
 mindplot.TopicStyle.STYLES =
 {
     CENTRAL_TOPIC: {
-        borderColor: 'rgb(57,113,177)',
-        backgroundColor: 'rgb(80,157,192)',
+        borderColor: window.CENTRAL_TOPIC_STYLE.borderColor || 'rgb(57,113,177)',
+        backgroundColor: window.CENTRAL_TOPIC_STYLE.backgroundColor || 'rgb(80,157,192)',
         fontStyle: {
-            font: "Verdana",
-            size: 10,
-            style: "normal",
-            weight: "bold",
-            color: "#ffffff"
+            font: window.CENTRAL_TOPIC_STYLE.fontStyle.font || "Verdana",
+            size: window.CENTRAL_TOPIC_STYLE.fontStyle.size || 10,
+            style: window.CENTRAL_TOPIC_STYLE.fontStyle.style || "normal",
+            weight: window.CENTRAL_TOPIC_STYLE.fontStyle.weight || "bold",
+            color: window.CENTRAL_TOPIC_STYLE.fontStyle.colors || "#ffffff"
         },
-        msgKey: 'CENTRAL_TOPIC',
-        innerPadding: 11,
-        shapeType: mindplot.model.TopicShape.ROUNDED_RECT
+        msgKey: window.CENTRAL_TOPIC_STYLE.msgKey || 'CENTRAL_TOPIC',
+        innerPadding: window.CENTRAL_TOPIC_STYLE.innerPadding || 11,
+        shapeType: mindplot.model.TopicShape[window.CENTRAL_TOPIC_STYLE.shapeType || 'ROUNDED_RECT']
     },
 
     MAIN_TOPIC: {
-        borderColor: 'rgb(2,59,185)',
-        backgroundColor: 'rgb(224,229,239)',
+        borderColor: window.MAIN_TOPIC_STYLE.borderColor || 'rgb(2,59,185)',
+        backgroundColor: window.MAIN_TOPIC_STYLE.backgroundColor || 'rgb(224,229,239)',
         fontStyle: {
-            font: "Arial",
-            size: 8,
-            style: "normal",
-            weight: "normal",
-            color: "rgb(82,92,97)"
+            font: window.CENTRAL_TOPIC_STYLE.fontStyle.font || "Arial",
+            size: window.CENTRAL_TOPIC_STYLE.fontStyle.size || 8,
+            style: window.CENTRAL_TOPIC_STYLE.fontStyle.style || "normal",
+            weight: window.CENTRAL_TOPIC_STYLE.fontStyle.weight || "normal",
+            color: window.CENTRAL_TOPIC_STYLE.fontStyle.color || "rgb(82,92,97)"
         },
-        msgKey: 'MAIN_TOPIC',
-        innerPadding: 3,
-        shapeType: mindplot.model.TopicShape.LINE
+        msgKey: window.MAIN_TOPIC_STYLE.msgKey || 'MAIN_TOPIC',
+        innerPadding: window.MAIN_TOPIC_STYLE.innerPadding || 3,
+        shapeType: mindplot.model.TopicShape[window.MAIN_TOPIC_STYLE.shapeType || 'LINE']
 
     },
 
     SUB_TOPIC: {
-        borderColor: 'rgb(2,59,185)',
-        backgroundColor: 'rgb(224,229,239)',
+        borderColor: window.SUB_TOPIC_STYLE.borderColor || 'rgb(2,59,185)',
+        backgroundColor: window.SUB_TOPIC_STYLE.backgroundColor || 'rgb(224,229,239)',
         fontStyle: {
-            font: "Arial",
-            size: 6,
-            style: "normal",
-            weight: "normal",
-            color: "rgb(82,92,97)"
+            font: window.SUB_TOPIC_STYLE.fontStyle.font || "Arial",
+            size: window.SUB_TOPIC_STYLE.fontStyle.size || 6,
+            style: window.SUB_TOPIC_STYLE.fontStyle.style || "normal",
+            weight: window.SUB_TOPIC_STYLE.fontStyle.weight || "normal",
+            color: window.SUB_TOPIC_STYLE.fontStyle.color || "rgb(82,92,97)"
         },
-        msgKey: 'SUB_TOPIC',
-        innerPadding: 3,
-        shapeType: mindplot.model.TopicShape.LINE
+        msgKey: window.SUB_TOPIC_STYLE.msgKey || 'SUB_TOPIC',
+        innerPadding: window.SUB_TOPIC_STYLE.innerPadding || 3,
+        shapeType: mindplot.model.TopicShape[window.SUB_TOPIC_STYLE.shapeType || 'LINE']
     },
 
     ISOLATED_TOPIC: {
-        borderColor: 'rgb(2,59,185)',
-        backgroundColor: 'rgb(224,229,239)',
+        borderColor: window.ISOLATED_TOPIC_STYLE.borderColor || 'rgb(2,59,185)',
+        backgroundColor: window.ISOLATED_TOPIC_STYLE.backgroundColor || 'rgb(224,229,239)',
         fontStyle: {
-            font: "Verdana",
-            size: 8,
-            style: "normal",
-            weight: "normal",
-            color: "rgb(82,92,97)"
+            font: window.ISOLATED_TOPIC_STYLE.fontStyle.font || "Verdana",
+            size: window.ISOLATED_TOPIC_STYLE.fontStyle.size || 8,
+            style: window.ISOLATED_TOPIC_STYLE.fontStyle.style || "normal",
+            weight: window.ISOLATED_TOPIC_STYLE.fontStyle.weight || "normal",
+            color: window.ISOLATED_TOPIC_STYLE.fontStyle.color || "rgb(82,92,97)"
         },
-        msgKey: 'ISOLATED_TOPIC',
-        innerPadding: 4,
-        shapeType: mindplot.model.TopicShape.LINE
+        msgKey: window.ISOLATED_TOPIC_STYLE.msgKey || 'ISOLATED_TOPIC',
+        innerPadding: window.ISOLATED_TOPIC_STYLE.innerPadding || 4,
+        shapeType: mindplot.model.TopicShape[window.ISOLATED_TOPIC_STYLE.shapeType || 'LINE']
     }
 };
-

@@ -1266,25 +1266,25 @@ mindplot.Topic = new Class(/** @lends Topic */{
  * @type {Number}
  * @default
  */
-mindplot.Topic.CONNECTOR_WIDTH = 6;
+mindplot.Topic.CONNECTOR_WIDTH = window.CONNECTOR_WIDTH || 6;
 /**
  * @constant
  * @type {Object<String, Number>}
  * @default
  */
-mindplot.Topic.OUTER_SHAPE_ATTRIBUTES = {fillColor: 'rgb(252,235,192)', stroke: '1 dot rgb(241,163,39)', x: 0, y: 0};
+mindplot.Topic.OUTER_SHAPE_ATTRIBUTES = window.OUTER_SHAPE_ATTRIBUTES || {fillColor: 'rgb(252,235,192)', stroke: '1 dot rgb(241,163,39)', x: 0, y: 0};
 /**
  * @constant
  * @type {Object<String, Number>}
  * @default
  */
-mindplot.Topic.OUTER_SHAPE_ATTRIBUTES_FOCUS = {fillColor: 'rgb(244,184,45)', x: 0, y: 0};
+mindplot.Topic.OUTER_SHAPE_ATTRIBUTES_FOCUS = window.OUTER_SHAPE_ATTRIBUTES_FOCUS || {fillColor: 'rgb(244,184,45)', x: 0, y: 0};
 /**
  * @constant
  * @type {Object<String>}
  * @default
  * */
-mindplot.Topic.INNER_RECT_ATTRIBUTES = {stroke: '2 solid'};
+mindplot.Topic.INNER_RECT_ATTRIBUTES = window.INNER_RECT_ATTRIBUTES || {stroke: '2 solid'};
 
 
 
