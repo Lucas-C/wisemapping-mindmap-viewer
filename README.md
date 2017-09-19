@@ -1,5 +1,7 @@
 Simple web mindmap renderer.
 
+![Screenshot of a rendered mindmap](screenshot.png)
+
 Fork of https://bitbucket.org/wisemapping/wisemapping-open-source, inspired by https://framagit.org/framasoft/framindmap
 
 
@@ -61,10 +63,9 @@ The `mindmap-schema.svg` is an interactive SVG visualisation of the eponymous XS
 TODO:
 - visually:
   * provide control on how "packed" is the mindmap
-  * add srcCtrlPoint/destCtrlPoint to relationships
   * viewport mess: mindmap peu dépasser au démarrage + resizing small->big pas supporté
   * keystrokes are captured (ex: CTRL+ALT+I, CTRL+H) : why ???
-- implémenter .A.B insertion
+  * add srcCtrlPoint/destCtrlPoint to relationships
 - publish Python code on pypi
 - try another syntax parser than pyparsing
 - `Synchronous XMLHttpRequest` warning comes from the way XML mindmaps are loaded in LocalStorageManager.js
