@@ -20,7 +20,7 @@ E.g. with Python:
 
 Where `optional_mindmap_name.xml` must be in `samples`.
 
-You can create those XML files from simple indented Markdown files with this Python script: https://github.com/Lucas-C/linux_configuration/tree/master/languages/python/mindmaps
+You can create those XML files from simple indented Markdown files with this Python script: https://github.com/Lucas-C/brain_dump
 
 ## Theme style : fonts, colors, etc.
 
